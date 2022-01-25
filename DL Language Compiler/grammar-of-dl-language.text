@@ -1,0 +1,71 @@
+<program> ::= <block>
+            | <declarations> <block>
+
+<declarations>::= <declaration>
+		|<declaration><declarations>
+
+<declaration>::= <variabledeclaration> | <functiondeclaration>
+
+<varibledeclaration>::= int <vardeflist>
+
+<vardeflist>::= <vardec> | <vardec>, <vardeflist>
+
+<vardec>::= <identifier> | <identifier> [ <constant> ] 
+
+<functiondeclaration> ::= <identifier> (); <functionbody>
+			| <identifier> ( <arglist> ); <functionbody>
+
+<functionbody> ::= <variabledeclaration> <block> | <block>
+
+<arglsit> ::= <identifier> | <identifier>, <arglist>
+
+<block> ::= { <statementlist> }
+
+<statementlist> ::= <statement> | <statement> ; <statementlist>
+
+<statement> ::= <assignment> | <ifstatement> | <whilestatement>
+		| <block> | <printstatement> | <readstatement>
+		| <returnstatement> | <empty>
+
+<assignment> ::= <identifier> = <expression>
+		| <identifier> [ <expression> ] = <expression>
+
+<ifstatement> ::= if( <bexpression> ) <block> else <block>
+		| if ( < bexpression> ) <block>
+
+<whilestatement> ::= while ( <bexpression> ) <block>
+
+<printstatement> ::= print( <expression> )
+
+<readstatement> ::= read( <identifier> )
+
+<returnstatement> ::= return <expression>
+
+<expression> ::= <expression> <addingop> <term>
+		| <term> | <addingop> <term>
+
+<bexpression> ::= <expression> <relop> <expression>
+
+<relop> ::= < | <= | == | >= | > | !=
+
+<addingop> ::= + | - 
+
+<term> ::+ <term> <multop><factor> | <factor>
+
+<multop> ::= * | /
+
+<arguments> ::= <expression> | <expression> , <arguments>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
